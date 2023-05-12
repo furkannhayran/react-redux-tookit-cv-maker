@@ -1,0 +1,400 @@
+.global-select {
+    align-items: center;
+    border-color: rgb(234 234 234);
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1.6px;
+    display: inline-block;
+    padding: 0px 14px 1px;
+    height: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: white;
+}
+
+.home-name-surname {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+
+    span {
+        background-color: white;
+
+        color: rgb(76 76 76);
+        display: inline-block;
+        font-family: Camphor;
+        font-size: 15px;
+        padding: 0px 0px 8px;
+
+    }
+
+    input {
+        height: 40px;
+        background-color: rgb(255 255 255);
+        border-color: rgb(234 234 234);
+        border-radius: 3px;
+        border-style: solid;
+        border-width: 1.6px;
+        display: inline-block;
+        font-family: Arial;
+        padding: 0px 14px 1px;
+        margin-bottom: 10px;
+    }
+}
+
+.homeContent-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    margin-top: 58px;
+
+    .homecontent-navbar {
+        background-color: white;
+        width: 50%;
+        padding: 1rem;
+        border-radius: 4px;
+        color: rgb(76 76 76);
+        box-shadow: rgb(50 50 93 / 0.1) 0px 15px 35px 0px;
+        font-family: "Cambay";
+
+        // .my-transition-enter {
+        //     opacity: 0;
+        // }
+
+        // .my-transition-enter-active {
+        //     opacity: 1;
+        //     transition: opacity 300ms ease-in;
+        // }
+
+        // .my-transition-exit {
+        //     opacity: 1;
+        // }
+
+        // .my-transition-exit-active {
+        //     opacity: 0;
+        //     transition: opacity 300ms ease-in;
+        // }
+
+        .home-container {
+            margin: 10px 30px;
+
+            .home-header {
+                background-color: white;
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 2rem;
+
+                b {
+                    background-color: white;
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+
+                .home-cv {
+
+                    width: 20%;
+                    font-size: 15px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    select {
+                        background-color: rgb(234 234 234);
+                        border-radius: 6px;
+                        color: rgb(76 76 76);
+                        display: inline;
+                        font-size: 15px;
+
+                    }
+
+                }
+            }
+        }
+
+        .home-photo-container {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0rem;
+
+            .home-photo {
+                cursor: pointer;
+                height: 150px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: 1px dashed rgb(150, 148, 148);
+                border-radius: 0.2rem;
+                background-color: rgb(245 245 245);
+                width: 130px;
+                margin-right: 1rem;
+                box-sizing: rgb(211 207 207) 0px 0px 3px 0px;
+                transition: 300ms;
+
+                .home-photo-icon {
+                    font-size: 3rem;
+                    color: rgb(136 136 136);
+                    background-color: rgb(245 245 245);
+                    margin-bottom: 1rem;
+                }
+
+                span {
+                    font-size: 11px;
+                    color: rgb(136 136 136);
+                    background-color: rgb(245 245 245);
+                }
+                &:hover{
+                    border: 2px dashed rgb(130, 129, 129);
+
+                }
+            }
+
+            .home-navbar {
+                background-color: white;
+                width: 75%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: start;
+
+                .home-navbar-name,
+                .home-navbar-Surname {
+                    @extend .home-name-surname
+                }
+            }
+
+        }
+
+        .home-mail-container {
+            background-color: white;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .home-mail,
+            .home-phone {
+                @extend .home-name-surname
+            }
+
+            .home-mail {
+                padding-right: 1rem;
+            }
+
+            .home-phone {
+                padding-left: 1rem;
+            }
+
+            .home-mail,
+            .home-phone {
+
+                input {
+                    height: 40px;
+                }
+            }
+        }
+
+        .home-adress {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+
+            span {
+                padding: 1rem 0rem;
+                background-color: white;
+            }
+
+            input {
+                height: 40px;
+                border: 1px solid rgb(209, 205, 205);
+                background-color: white;
+                display: flex;
+            }
+        }
+
+        .home-city-post-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+
+            .home-posta,
+            .home-city {
+                @extend .home-name-surname
+            }
+
+            .home-posta {
+                padding: 1rem 1rem 0rem 0rem;
+
+            }
+
+            .home-city {
+                padding: 1rem 0rem 0rem 1rem;
+
+            }
+
+            .home-posta,
+            .home-city {
+                input {
+                    height: 40px;
+                }
+            }
+        }
+
+        .ekbilgiler-container {
+
+            .ekbilgiler {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 40px;
+                background-color: rgb(241 241 241);
+                cursor: pointer;
+
+                // margin-bottom: 1rem;
+                .svg {
+                    display: inline;
+                    color: rgb(76 76 76);
+                    text-align: center;
+                    background-color: rgb(241 241 241);
+                }
+
+                .ekbilgi-link {
+                    background-color: rgb(241 241 241);
+                    margin-left: 5px;
+                    text-decoration: none;
+                    color: rgb(76 76 76);
+                }
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                // padding: 1rem;
+                // border: none;
+                // font-size: 1rem;
+                // cursor: pointer;
+                // margin-top: 1rem;
+                // border-radius: 0.2rem;
+            }
+        }
+
+
+        .home-after-container {
+            background-color: white;
+            margin: 0rem 2rem 2rem 2rem;
+
+            .home-after-date-navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                background-color: white;
+
+                .home-after-select {
+                    background-color: white;
+                    width: 50%;
+                    padding-right: 1rem;
+                    display: flex;
+                    margin-top: 1rem;
+                    justify-content: space-between;
+
+                    select:nth-child(1) {
+                        width: 30%;
+                        margin-right: 1rem;
+                        @extend .global-select
+                    }
+
+                    select:nth-child(2) {
+                        width: 40%;
+                        margin-right: 1rem;
+                        @extend .global-select
+                    }
+
+                    select:nth-child(3) {
+                        width: 30%;
+                        @extend .global-select
+                    }
+                }
+
+                .home-after-date {
+                    padding-left: 1rem;
+                    width: 50%;
+
+                    @extend .home-name-surname
+                }
+            }
+
+            .home-after-driver-gender {
+                display: flex;
+                justify-content: space-between;
+                background-color: white;
+
+                .home-after-driver,
+                .home-after-gender {
+                    margin-top: 1rem;
+                    background-color: white;
+                    @extend .home-name-surname
+                }
+
+                .home-after-driver {
+                    select {
+                        margin-right: 1rem;
+                        @extend .global-select
+                    }
+                }
+
+                .home-after-gender {
+                    select {
+                        margin-left: 1rem;
+                        @extend .global-select
+                    }
+                }
+            }
+
+            .home-after-military-marital {
+                display: flex;
+                justify-content: space-between;
+                background-color: white;
+
+                .home-after-military,
+                .home-after-marital {
+                    @extend .home-name-surname
+                }
+
+                .home-after-marital {
+                    margin-left: 1rem;
+                }
+
+                .home-after-military {
+                    margin-right: 1rem;
+                }
+            }
+
+            .home-after-link-web {
+                display: flex;
+                justify-content: space-between;
+                background-color: white;
+
+                .home-after-link,
+                .home-after-web {
+                    @extend .home-name-surname
+                }
+
+                .home-after-link {
+                    margin-right: 1rem;
+                }
+
+                .home-after-web {
+                    margin-left: 1rem;
+
+                }
+            }
+        }
+    }
+}

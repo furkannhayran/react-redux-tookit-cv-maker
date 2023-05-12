@@ -1,0 +1,313 @@
+// component başlangıç
+
+.button-content {
+    background-color: rgb(255 255 255);
+    border-color: rgb(230 229 229);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1.6px;
+    color: rgb(76 76 76);
+    font-family: Arial;
+    padding: 6px 11px 7px 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.input-content {
+    background-color: rgb(255 255 255);
+    border-color: rgb(234 234 234);
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1.6px;
+    display: inline-block;
+    font-family: Arial;
+    padding: 0px 14px 1px;
+    height: 40px;
+    outline: none;
+
+    &:focus {
+        border-color: rgb(174, 174, 243);
+    }
+}
+
+.input-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-navbar-content {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.input-span {
+
+    color: rgb(76 76 76);
+    display: inline-block;
+    font-family: "Cambay";
+    font-size: 18px;
+    padding: 0px 0px 8px;
+}
+
+// component bitiş
+.property-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4rem;
+
+    .property-button-info {
+        @extend.button-content;
+
+        &:hover {
+            .property-button-info-icon {
+                transition: 500ms;
+                color: rgb(235, 178, 72);
+            }
+
+            .property-button-info-span {
+                transition: 500ms;
+                text-decoration: underline;
+            }
+        }
+
+        .property-button-info-icon {
+            margin-right: 4px;
+
+        }
+    }
+
+    .property-button-delete-save {
+        display: flex;
+
+        .property-button-delete {
+            @extend.button-content;
+            margin-right: 1rem;
+
+            &:hover {
+                .property-button-delete-icon {
+                    transition: 500ms;
+                    color: rgb(237, 87, 87)
+                }
+
+                .property-button-delete-span {
+                    transition: 500ms;
+                    text-decoration: underline;
+                }
+            }
+
+            .property-button-delete-icon {
+                margin-right: 4px;
+
+            }
+
+        }
+
+        .property-button-save {
+            @extend.button-content;
+
+            &:hover {
+                .property-button-save-icon {
+                    transition: 500ms;
+                    color: rgb(80, 80, 226);
+                }
+
+                .property-button-save-span {
+                    transition: 500ms;
+                    text-decoration: underline;
+                }
+            }
+
+            .property-button-save-icon {
+                margin-right: 4px;
+
+            }
+        }
+    }
+}
+
+.buttonSave-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 4rem;
+
+    .buttonSave-delete-navbar {
+        @extend .button-content;
+        margin-right: 1rem;
+
+        &:hover {
+            .buttonSave-delete-icon {
+                transition: 500ms;
+                color: rgb(237, 87, 87)
+            }
+
+            .buttonSave-delete-span {
+                transition: 500ms;
+                text-decoration: underline;
+            }
+        }
+
+        .buttonSave-delete-icon {
+            margin-right: 4px;
+        }
+    }
+
+    .buttonSave-save-navbar {
+        @extend .button-content;
+
+        &:hover {
+            .buttonSave-sace-icon {
+                transition: 500ms;
+                color: rgb(80, 80, 226);
+            }
+
+            .buttonSave-sace-span {
+                transition: 500ms;
+                text-decoration: underline;
+            }
+
+        }
+
+        .buttonSave-sace-icon {
+            margin-right: 3px;
+
+        }
+    }
+}
+
+
+
+.input-container-ssss {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+
+    span {
+        @extend .input-span;
+    }
+
+    input {
+        @extend .input-content;
+    }
+}
+
+.inputs-container {
+    @extend .input-container;
+
+
+    .inputs-navbar-one {
+        @extend .input-navbar-content;
+
+        span {
+            @extend .input-span;
+        }
+
+        input {
+            @extend .input-content;
+        }
+    }
+
+    .inputs-navbar-two {
+        @extend .input-navbar-content;
+
+
+        span {
+            @extend .input-span;
+
+        }
+
+        input {
+            @extend .input-content;
+
+
+        }
+    }
+}
+
+.oneSelected-container {
+    @extend .input-container;
+
+    .oneSelected-navbar-one {
+        @extend .input-navbar-content;
+
+        input {
+            @extend .input-content;
+        }
+    }
+
+    .oneSelected-navbar-two {
+        @extend .input-navbar-content;
+        select {
+            @extend .input-content;
+        }
+
+    }
+}
+
+.rickText-container {
+    margin-top: 1rem;
+
+    .rickText-container-span {
+        @extend .input-span;
+    }
+}
+
+.selected-container {
+    @extend .input-container;
+
+    .selected-container-navbar {
+        @extend .input-navbar-content;
+
+        .selected-container-navbar-span {
+            @extend .input-span;
+        }
+
+        .selected-container-navbar-content {
+            display: flex;
+            justify-content: space-between;
+            .selected-container-navbar-content-one-select {
+                width: 48%;
+                @extend .input-content;
+                .selected-container-navbar-content-one-select-option-one {}
+            }
+
+            .selected-container-navbar-content-two-select {
+                width: 48%;
+                @extend .input-content;
+                .selected-container-navbar-content-one-select-option-two {}
+            }
+        }
+    }
+
+
+    .selected-container-navbar-two {
+        @extend .input-navbar-content;
+
+
+        .selected-container-navbar-span-two {
+            @extend .input-span;
+        }
+
+        .selected-container-navbar-content-two {
+            display: flex;
+            justify-content: space-between;
+            
+            .selected-container-two-navbar-content-one-select {
+                width: 48%;
+                @extend .input-content;
+            }
+
+            .selected-container-two-navbar-content-two-select {
+                width: 48%;
+                @extend .input-content;
+            }
+
+        }
+    }
+}

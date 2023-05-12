@@ -1,0 +1,91 @@
+.past-container {
+    .past-content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -3rem;
+
+        .past-content-navbar {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 50%;
+            background-color: rgb(255 255 255);
+            border-radius: 4px;
+            box-shadow: rgb(50 50 93 / 0.1) 0px 15px 35px 0px;
+            color: rgb(76 76 76);
+            font-size: 15px;
+            margin: 0px 0px 75px;
+            padding: 35px 40px;
+            font-size: 1.4rem;
+
+            .past-content-navbar-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: rgb(255 255 255);
+
+                .past-content-header {
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        margin-left: 1rem;
+                        background-color: rgb(255 255 255);
+
+                    }
+                }
+
+                .past-content-icons {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 10%;
+                    background-color: rgb(255 255 255);
+
+                    svg {
+                        background-color: rgb(255 255 255);
+
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .past-select-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .past-select-navbar {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 50%;
+            background-color: rgb(255 255 255);
+            border-radius: 4px;
+            box-shadow: rgb(50 50 93 / 0.1) 0px 15px 35px 0px;
+            color: rgb(76 76 76);
+            font-size: 15px;
+            // margin: 0px 0px 75px;
+            padding: 35px 40px;
+            overflow: hidden;
+            box-sizing: border-box;
+
+            .past-select {
+                border-radius: 3px;
+                border-color: rgb(137 193 255 / 0.91);
+                box-shadow: rgb(50 50 93 / 0.1) 0px 15px 35px 0px;
+                border-style: solid;
+                border-width: 1.6px;
+                display: flex;
+                padding: 1rem;
+                font-size: 1rem;
+                color: rgb(76 76 76);
+                font-weight: 600;
+            }
+        }
+    }
+}
