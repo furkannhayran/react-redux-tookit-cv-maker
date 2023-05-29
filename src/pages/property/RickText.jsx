@@ -1,46 +1,51 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
+const data = []
 function RickText({ span, setProfil, compName }) {
   const [content, setContent] = useState('');
+  // const [data, setData] = useState([])
   var RickTextObj = {};
   const handleChange = (value) => {
     RickTextObj[compName] = value
-    setProfil(RickTextObj);
+    data.push(RickTextObj)
+    // console.log(data)
     setContent(value);
-  };
 
+    if (data.length > 1) {
+      const groupedData = data.reduce((acc, item) => {
+        const key = Object.keys(item)[0];
+        const value = Object.values(item)[0];
+
+        if (!acc[key]) {
+          acc[key] = [];
+        }
+        acc[key].push(value);
+        return acc;
+      }, {});
+      setProfil(groupedData);
+    }
+  };
   const modules = {
     toolbar: [
-      ['bold', 'italic', 'underline',], // metni biçimlendirme
-      [{ 'list': 'ordered' }, { 'list': 'bullet' }], // liste seçenekleri
-      // [{ 'indent': '-1' }, { 'indent': '+1' }], // girinti ayarları
-      // [{ 'align': [] }], // hizalama seçenekleri
-      // ['link', 'image'] // bağlantı ve resim ekleme
+      ['bold', 'italic', 'underline',],
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
     ]
   };
-
-  // const formats = [
-  //   'bold', 'italic', 'underline', 'strike', 'list', 'bullet', 'indent', 'align', 'link', 'image'
-  // ];
   const rickStyle = {
-    height: '100px',
-    // backgroundColor: '#f2f2f2',
-    // border: '1px solid #ccc',
+    height: '100px'
   }
   return (
 
     <div className='rickText-container'>
       <span className='rickText-container-span'>{span}</span>
       <ReactQuill
-
         style={rickStyle}
         value={content}
         onChange={handleChange}
         modules={modules}
-        // formats={formats}
-        theme="snow" // tema seçeneği
+        theme="snow"
       />
     </div>
   );
