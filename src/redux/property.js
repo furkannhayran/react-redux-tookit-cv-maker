@@ -9,11 +9,11 @@ const rickKeys = [
     "Publication",
     "Success"
 ]
-const inputKeys = [
-    "Education",
-    "Interest",
-    "WorkExp"
-]
+// const inputKeys = [
+//     "Education",
+//     "Interest",
+//     "WorkExp"
+// ]
 export const propertySlice = createSlice({
     name: "prof",
     initialState: 0,
@@ -21,55 +21,61 @@ export const propertySlice = createSlice({
         rickTextProfile: (state, action) => {
             if (action.payload !== "") {
                 const obj = {};
-                rickKeys.map(item=>{
-                    if(action.payload[item]){
-                        obj[item] =  action.payload[item][action.payload[item].length-1]
+                rickKeys.map(item => {
+                    if (action.payload[item]) {
+                        obj[item] = action.payload[item][action.payload[item].length - 1]
                         console.log(obj)
                     }
                 })
+                console.log("rick obj" , obj)
                 return obj
             }
             return ""
         },
-        inputChangeValue : (state,action) =>{
-            const obj = {}
-            inputKeys.map(item=>{
-                if(action.payload[item]){
-                    const value = action.payload[item][0]
-                    obj[item] = value
-                }
+        // inputChangeValue: (state, action) => {
+        //     const obj = {}
+        //     console.log("action.payload", action.payload)
+        //     inputKeys.map(item => {
+        //         if (action.payload[item]) {
+        //             const value = action.payload[item].length - 1;
+        //             obj[item] = action.payload[item][value]
+        //             // const value = action.payload[item][0]
+        //             // obj[item] = value
+        //         }
 
-            })
-           console.log(obj)
-           return obj
-        },
-        
-        inputWorktitle : (state,action) =>{
-            const obj = {}
-            inputKeys.map(item=>{
-                if(action.payload[item]){
-                    const value = action.payload[item][0]
-                    obj[item] = value
-                }
+        //     })
+        //     console.log("obj", obj)
+        //     return obj
+        // },
 
-            })
-           console.log(obj)
-           return obj
-        },
-        inputCity : (state,action) =>{
-            const obj = {}
-            inputKeys.map(item=>{
-                if(action.payload[item]){
-                    const value = action.payload[item][0]
-                    obj[item] = value
-                }
-            })
-           console.log(obj)
-           return obj
-        },
+        // inputWorktitle: (state, action) => {
+        //     const obj = {}
+        //     inputKeys.map(item => {
+        //         if (action.payload[item]) {
+        //             const value = action.payload[item][0]
+        //             obj[item] = value
+        //         }
+
+        //     })
+        //     console.log(obj)
+        //     return obj
+        // },
+        // inputCity: (state, action) => {
+        //     const obj = {}
+        //     inputKeys.map(item => {
+        //         if (action.payload[item]) {
+        //             const value = action.payload[item][0]
+        //             obj[item] = value
+        //         }
+        //     })
+        //     console.log(obj)
+        //     return obj
+        // },
     }
 })
 
-export const { rickTextProfile , inputChangeValue , inputWorktitle , inputCity} = propertySlice.actions
+export const { rickTextProfile,
+    //  inputChangeValue, inputWorktitle, inputCity
+     } = propertySlice.actions
 
 export default propertySlice.reducer

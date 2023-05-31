@@ -6,11 +6,32 @@ import RickText from '../property/RickText';
 import Button from '../property/Button';
 import { useDispatch } from 'react-redux';
 import { rickTextProfile } from '../../redux/property';
+import { inputChangeValue } from '../../redux/inputChange';
+import { inputsCity } from '../../redux/inputsCity';
+import { inputsWork } from '../../redux/inputsWork';
 
 function EducationContent() {
-  
+
   const [profile, setProfil] = useState("")
   const dispatch = useDispatch()
+
+
+
+  const [input, setInput] = useState("");
+  useEffect(() => {
+    dispatch(inputChangeValue(input))
+  }, [input]);
+
+  const [inputCityHandleChange, setInputCityHandleChange] = useState("")
+  useEffect(() => {
+    dispatch(inputsCity(inputCityHandleChange))
+  }, [inputCityHandleChange]);
+
+  const [workHandleChange, setWorkHandleChange] = useState("")
+  useEffect(() => {
+    dispatch(inputsWork(workHandleChange))
+  }, [workHandleChange]);
+
   useEffect(() => {
 
     dispatch(rickTextProfile(profile))
@@ -60,10 +81,10 @@ function EducationContent() {
         marginBottom: "50px"
       }}>
         <hr />
-        <Inputs compName="Education" onespan="Derece" onePlace="örn. Fen Fakültesi Diploması" twospan="Şehir/İlçe" twoPlace="örn. İstanbul" />
-        <Input compName="Education" span="Okul" place="örn. University of London" />
+        <Inputs setInputCityHandleChange={setInputCityHandleChange} setWorkHandleChange={setWorkHandleChange} compName="Education" onespan="Derece" onePlace="örn. Fen Fakültesi Diploması" twospan="Şehir/İlçe" twoPlace="örn. İstanbul" />
+        <Input setInput={setInput} compName="Education" span="Okul" place="örn. University of London" />
         <Selected compName="Education" onespan="Başlangıç Tarihi" onemoon={moons} oneyil={years} twospan="Bitiş Tarihi" twomoon={twoMoons} twoyil={years} />
-        <RickText compName="Education" setProfil={setProfil} span = "Tanım" />
+        <RickText compName="Education" setProfil={setProfil} span="Tanım" />
         <Button />
       </div>
     </div>

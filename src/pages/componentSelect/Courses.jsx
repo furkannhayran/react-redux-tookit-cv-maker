@@ -5,10 +5,23 @@ import Button from '../property/Button';
 import Selected from '../property/Selected';
 import { useDispatch } from 'react-redux';
 import { rickTextProfile } from '../../redux/property';
+import inputsCity from '../../redux/inputsCity';
+import inputsWork from '../../redux/inputsWork';
 
 function Courses() {
   const [profile, setProfil] = useState("")
   const dispatch = useDispatch()
+
+  const [inputCityHandleChange, setInputCityHandleChange] = useState("")
+  useEffect(() => {
+    dispatch(inputsCity(inputCityHandleChange))
+  }, [inputCityHandleChange]);
+
+  const [workHandleChange, setWorkHandleChange] = useState("")
+  useEffect(() => {
+    dispatch(inputsWork(workHandleChange))
+  }, [workHandleChange]);
+
   useEffect(() => {
 
     dispatch(rickTextProfile(profile))
@@ -54,7 +67,7 @@ function Courses() {
   }
   return (
     <div>
-      <Inputs compName="Courses" onespan="Kurs" onePlace="örn. Finanasal Yönetim"  twospan="Kurum" twoPlace = "örn. London business Scholl"/>
+      <Inputs setInputCityHandleChange={setInputCityHandleChange} setWorkHandleChange={setWorkHandleChange} compName="Courses" onespan="Kurs" onePlace="örn. Finanasal Yönetim"  twospan="Kurum" twoPlace = "örn. London business Scholl"/>
       <Selected compName="Courses" onespan="Başlangıç Tarihi" onemoon={moons} oneyil={years} twospan="Bitiş Tarihi" twomoon={twoMoons} twoyil={years} />
       <RickText compName="Courses" setProfil={setProfil} span="Açıklama"/>
       <Button/>

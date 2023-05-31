@@ -3,6 +3,15 @@ import Inputs from '../property/Inputs'
 import Button from '../property/Button'
 
 function ReferanceContent() {
+  // const [inputCityHandleChange, setInputCityHandleChange] = useState("")
+  // useEffect(() => {
+  //   dispatch(inputsCity(inputCityHandleChange))
+  // }, [inputCityHandleChange]);
+
+  // const [workHandleChange, setWorkHandleChange] = useState("")
+  // useEffect(() => {
+  //   dispatch(inputsWork(workHandleChange))
+  // }, [workHandleChange]);
   return (
     <div style={{
       marginBottom: "50px"
